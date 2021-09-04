@@ -1,0 +1,16 @@
+.location {
+  position: absolute;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+
+  &:hover {
+    cursor: pointer;
+    color: rgb(216, 6, 188);
+
+    svg {
+      fill: rgb(216, 6, 188);
+    }
+  }
+}
