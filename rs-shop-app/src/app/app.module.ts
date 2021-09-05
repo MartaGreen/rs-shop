@@ -6,6 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
+import { categoriesEffect } from './redux/effects/get-categories.effect';
 import { LocationEffect } from './redux/effects/location.effect';
 import { reducers } from './redux/reducers/register-reducers';
 
@@ -17,7 +18,7 @@ import { reducers } from './redux/reducers/register-reducers';
     AppRoutingModule,
     CoreModule,
     HttpClientModule,
-    EffectsModule.forRoot([LocationEffect]),
+    EffectsModule.forRoot([LocationEffect, categoriesEffect]),
   ],
   providers: [],
   bootstrap: [AppComponent],

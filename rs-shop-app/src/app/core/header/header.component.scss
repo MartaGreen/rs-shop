@@ -1,13 +1,20 @@
 .header {
   position: relative;
-  box-shadow: 2px 2px 2px rgb(216, 214, 214);
+
+  .shadow-box {
+    box-shadow: 1px 1px 1px rgb(236, 235, 235);
+  }
 
   .header-inner {
     position: relative;
-    width: 78%;
+    width: 80%;
     min-width: 500px;
+    max-width: 1200px;
 
-    margin: 0 auto;
+    margin: 0 auto 13px auto;
+  }
+
+  .header-info {
     padding: 10px 0;
 
     display: flex;
