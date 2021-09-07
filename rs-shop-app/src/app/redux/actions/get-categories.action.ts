@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { ISearchedCategory } from 'src/app/core/models/searched-data.model';
+import { ISearchedCategory } from 'src/app/core/header/models/searched-data.model';
 
 export const getCategoriesAction = createAction('[GetCategories] get categories');
 export const getCategoriesSuccessAction = createAction(

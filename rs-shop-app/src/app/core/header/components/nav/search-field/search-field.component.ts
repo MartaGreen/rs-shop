@@ -2,9 +2,9 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { fromEvent } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
-import { ISearchedCategories } from 'src/app/core/models/searched-data.model';
+import { ISearchedCategories } from 'src/app/core/header/models/searched-data.model';
 import { categoriesSelector } from 'src/app/redux/selectors/get-categories.selector';
-import { SearchService } from '../../services/search.service';
+import { SearchService } from '../../../services/search.service';
 
 @Component({
   selector: 'app-search-field',

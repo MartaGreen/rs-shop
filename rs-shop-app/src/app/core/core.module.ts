@@ -1,27 +1,27 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { HeaderComponent } from './header/header.component';
-import { ContactsComponent } from './header/info/contacts/contacts.component';
-import { InfoComponent } from './header/info/info.component';
-import { LocationComponent } from './header/info/location/location.component';
-import { TimeComponent } from './header/info/time/time.component';
-import { NavComponent } from './header/nav/nav.component';
-import { SearchFieldComponent } from './header/nav/search-field/search-field.component';
+import { ContactsComponent } from './header/components/contacts/contacts.component';
+import { InfoComponent } from './header/components/info/info.component';
+import { LocationComponent } from './header/components/info/location/location.component';
+import { TimeComponent } from './header/components/info/time/time.component';
+import { NavComponent } from './header/components/nav/nav.component';
+import { SearchFieldComponent } from './header/components/nav/search-field/search-field.component';
+import { HeaderTemplateComponent } from './header/components/pages/header-template/header-template.component';
 import { LocationService } from './header/services/location.service';
 import { SearchService } from './header/services/search.service';
 
 @NgModule({
   declarations: [
-    HeaderComponent,
     InfoComponent,
     LocationComponent,
     ContactsComponent,
     TimeComponent,
     NavComponent,
     SearchFieldComponent,
+    HeaderTemplateComponent,
   ],
   imports: [CommonModule],
-  exports: [HeaderComponent],
+  exports: [HeaderTemplateComponent],
   providers: [LocationService, SearchService],
 })
 export class CoreModule {}

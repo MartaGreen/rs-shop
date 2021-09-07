@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { ISearchedCategories } from 'src/app/core/models/searched-data.model';
+import { ISearchedCategories } from 'src/app/core/header/models/searched-data.model';
 
 export const CATEGORIES_KEY = 'categories';
 

@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { ISearchedCategories } from 'src/app/core/models/searched-data.model';
+import { ISearchedCategories } from 'src/app/core/header/models/searched-data.model';
 import * as categoriesActions from '../actions/get-categories.action';
 
 export const categoriesInitialState: ISearchedCategories = {} as ISearchedCategories;
