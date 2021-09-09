@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { fromEvent } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
@@ -13,11 +14,13 @@ import { SearchService } from '../../../services/search.service';
 })
 export class SearchFieldComponent implements OnInit {
   searchedData$ = this.store.select(categoriesSelector);
+  showSearchedResults: boolean = true;
   searchedData: ISearchedCategories = {} as ISearchedCategories;
   constructor(
     private elRef: ElementRef,
     private service: SearchService,
     private store: Store,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -40,5 +43,13 @@ export class SearchFieldComponent implements OnInit {
     this.searchedData$.subscribe((categories) => {
       this.searchedData.categories = categories;
     });
+  }
+
+  onBlurEvent() {
+    this.showSearchedResults = false;
+  }
+  onFocusEvent() {
+    this.router.navigate(['/']);
+    this.showSearchedResults = true;
   }
 }

@@ -8,14 +8,20 @@
 }
 
 .searched-results {
+  position: absolute;
+  top: 90px;
+  left: 10%;
+
   width: 80%;
-  margin: 15px auto;
+  // margin: 15px auto;
 
   border-left: 1px solid gray;
   border-right: 1px solid gray;
   box-shadow: 1px 2px 3px rgb(207, 206, 206);
 
   font-size: 16px;
+
+  background: white;
 
   .searched-results-item {
     margin-bottom: 10px;

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { ContactsComponent } from './header/components/contacts/contacts.component';
 import { InfoComponent } from './header/components/info/info.component';
 import { LocationComponent } from './header/components/info/location/location.component';
@@ -20,7 +21,7 @@ import { SearchService } from './header/services/search.service';
     SearchFieldComponent,
     HeaderTemplateComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   exports: [HeaderTemplateComponent],
   providers: [LocationService, SearchService],
 })

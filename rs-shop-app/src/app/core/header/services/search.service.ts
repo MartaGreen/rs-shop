@@ -6,6 +6,7 @@ import {
   getCategoriesAction,
 } from 'src/app/redux/actions/get-categories.action';
 import { categoriesSelector } from 'src/app/redux/selectors/get-categories.selector';
+import { SERVER_ADDRESS } from 'src/app/shared/constants';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +18,7 @@ export class SearchService {
 
   sendGetCategoriesReq() {
     console.log('tech', this.searchedStr);
-    return this.http.get(`http://localhost:3004/categories?q=${this.searchedStr}`);
+    return this.http.get(`${SERVER_ADDRESS}/categories?q=${this.searchedStr}`);
   }
 
   getCategoriesFunc(searchedStr: string) {
