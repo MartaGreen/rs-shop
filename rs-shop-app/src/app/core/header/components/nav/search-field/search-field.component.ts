@@ -24,7 +24,6 @@ export class SearchFieldComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.searchedData$);
     const search: HTMLInputElement =
       this.elRef.nativeElement.querySelector('.search-input');
 
@@ -45,8 +44,13 @@ export class SearchFieldComponent implements OnInit {
     });
   }
 
-  onBlurEvent() {
-    this.showSearchedResults = false;
+  onBlurEvent(event: Event) {
+    // console.log('test');
+    // if ((<HTMLElement>event.target).closest('.searched-results')) {
+    //   this.showSearchedResults = false;
+    //   console.log('test2');
+    // }
+    setTimeout(() => (this.showSearchedResults = false), 100);
   }
   onFocusEvent() {
     this.router.navigate(['/']);

@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { GoodsCatalogComponent } from './components/goods-catalog/goods-catalog.component';
+import { GoodsPageComponent } from './components/goods-page/goods-page.component';
 import { GoodsRoutingModule } from './goods-routhing.module';
-import { GoodsCatalogService } from './services/goods-catalog.service';
+import { GoodsService } from './services/goods.service';
 
 @NgModule({
-  declarations: [GoodsCatalogComponent],
+  declarations: [GoodsCatalogComponent, GoodsPageComponent],
   imports: [CommonModule, GoodsRoutingModule],
-  providers: [GoodsCatalogService],
+  providers: [GoodsService],
 })
 export class GoodsModule {}

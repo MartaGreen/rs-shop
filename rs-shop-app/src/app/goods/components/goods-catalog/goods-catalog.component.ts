@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { getAllCategories } from 'src/app/redux/actions/goods-catalog.action';
 import { ICategory } from 'src/app/redux/models/goods-catalog.model';
 import { allCategoriesSelector } from 'src/app/redux/selectors/goods-catalog.selector';
-import { GoodsCatalogService } from '../../services/goods-catalog.service';
+import { GoodsService } from '../../services/goods.service';
 
 @Component({
   selector: 'app-goods-catalog',
@@ -16,7 +16,7 @@ export class GoodsCatalogComponent implements OnInit {
   searchedData: any;
   lastChosenElem?: HTMLDivElement;
 
-  constructor(private store: Store, private service: GoodsCatalogService) {}
+  constructor(private store: Store, private service: GoodsService) {}
 
   ngOnInit(): void {
     this.store.dispatch(getAllCategories());

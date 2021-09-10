@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 import { GoodsModule } from './goods/goods.module';
 import { categoriesEffect } from './redux/effects/get-categories.effect';
 import { allCategoriesEffect } from './redux/effects/goods-catalog.effect';
+import { getGoodsEffect } from './redux/effects/goods-page.effect';
 import { LocationEffect } from './redux/effects/location.effect';
 import { reducers } from './redux/reducers/register-reducers';
 
@@ -20,7 +21,12 @@ import { reducers } from './redux/reducers/register-reducers';
     AppRoutingModule,
     CoreModule,
     HttpClientModule,
-    EffectsModule.forRoot([LocationEffect, categoriesEffect, allCategoriesEffect]),
+    EffectsModule.forRoot([
+      LocationEffect,
+      categoriesEffect,
+      allCategoriesEffect,
+      getGoodsEffect,
+    ]),
     GoodsModule,
   ],
   providers: [],

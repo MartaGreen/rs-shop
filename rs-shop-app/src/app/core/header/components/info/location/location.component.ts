@@ -10,9 +10,7 @@ import { LocationService } from '../../../services/location.service';
 export class LocationComponent implements OnInit {
   locationPoint = this.locationService.getLocationFunc();
 
-  constructor(private locationService: LocationService) {
-    this.locationPoint.subscribe((city) => console.log('city', city));
-  }
+  constructor(private locationService: LocationService) {}
 
   ngOnInit(): void {}
 }

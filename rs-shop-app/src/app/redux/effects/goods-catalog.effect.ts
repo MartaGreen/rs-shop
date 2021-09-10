@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { map, switchMap } from 'rxjs/operators';
-import { GoodsCatalogService } from 'src/app/goods/services/goods-catalog.service';
+import { GoodsService } from 'src/app/goods/services/goods.service';
 import {
   getAllCategories,
   getAllCategoriesSuccess,
@@ -24,16 +24,6 @@ export class allCategoriesEffect {
       ),
     ),
   );
-  // allCategories$ = createEffect((): any => {
-  //   this.actions$.pipe(
-  //     ofType(getAllCategories),
-  //     switchMap((): any =>
-  //       this.service
-  //         .sendGetAllCategoriesReq()
-  //         .pipe(map((allCategories: any) => getAllCategoriesSuccess({ allCategories })));
-  //     ),
-  //   );
-  // });
 
-  constructor(private actions$: Actions, private service: GoodsCatalogService) {}
+  constructor(private actions$: Actions, private service: GoodsService) {}
 }

@@ -31,12 +31,18 @@
 
     .catalog-subcategories-cont {
       width: 85%;
-      margin: 0 22%;
+      margin: 0 20%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
 
       .catalog-subcategory-item {
-        margin-bottom: 20px;
+        height: 50px;
+        padding: 15px 0 0 15px;
+
+        &:hover {
+          background: linear-gradient(to bottom, rgb(247, 164, 40), rgb(251, 253, 108));
+          cursor: pointer;
+        }
       }
     }
   }

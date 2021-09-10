@@ -11,7 +11,8 @@
         <div class="catalog-subcategory">
           <h2 class="catalog-category-title">{{chosenCategoryData.name}}</h2>
           <div class="catalog-subcategories-cont">
-            <div class="catalog-subcategory-item" *ngFor="let subCategory of chosenCategoryData.subCategories">
+            <div class="catalog-subcategory-item" *ngFor="let subCategory of chosenCategoryData.subCategories"
+              [routerLink]="['/goods/category/', chosenCategoryData.id ,subCategory.id]">
               {{subCategory.name}}</div>
           </div>
         </div>
@@ -21,7 +22,8 @@
         <div class="catalog-subcategory" *ngIf="searchedData">
           <h2 class="catalog-category-title">{{searchedData[0].name}}</h2>
           <div class="catalog-subcategories-cont">
-            <div class="catalog-subcategory-item" *ngFor="let subCategory of searchedData[0].subCategories">
+            <div class="catalog-subcategory-item" *ngFor="let subCategory of searchedData[0].subCategories"
+              [routerLink]="['/goods/category/', searchedData[0].id ,subCategory.id]">
               {{subCategory.name}}</div>
           </div>
         </div>
