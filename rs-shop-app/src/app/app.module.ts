@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { GoodsModule } from './goods/goods.module';
+import { DetailsEffect } from './redux/effects/details.effect';
 import { categoriesEffect } from './redux/effects/get-categories.effect';
 import { allCategoriesEffect } from './redux/effects/goods-catalog.effect';
 import { getGoodsEffect } from './redux/effects/goods-page.effect';
@@ -26,6 +27,7 @@ import { reducers } from './redux/reducers/register-reducers';
       categoriesEffect,
       allCategoriesEffect,
       getGoodsEffect,
+      DetailsEffect,
     ]),
     GoodsModule,
   ],

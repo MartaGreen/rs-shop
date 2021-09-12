@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { IGood } from '../models/goods-page.model';
+import { IGood } from '../models/details.model';
 
 export const getGoodsAction = createAction(
   '[GetGoods] get goods',

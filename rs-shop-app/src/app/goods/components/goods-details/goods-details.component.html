@@ -1,0 +1,35 @@
+<div class="details-cont" *ngIf='(details$ |async)?.detailsData'>
+
+  <h3 class="title">{{details.detailsData.name}}</h3>
+
+  <div class="slider-cont">
+    <div class="images-cont">
+      <div class="image" *ngFor="let image of details.detailsData.imageUrls; let i = index"
+        (click)='sliderMiniClick($event, i)' [ngClass]="{'activeMini': i == 0}">
+        <img src="{{details.detailsData.imageUrls[i]}}" alt="">
+      </div>
+    </div>
+
+    <div id="detailsSlider" class="carousel slide" data-interval="false">
+      <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let image of details.detailsData.imageUrls; let i = index"
+          [ngClass]="{'active': i == 0}" data-index="i">
+          <img class="d-block" src="{{details.detailsData.imageUrls[i]}}" alt="First slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev carousel-control" href="#detailsSlider" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Prev</span>
+      </a>
+      <a class="carousel-control-next carousel-control" href="#detailsSlider" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="description">
+    <span class="description-title">О товаре:</span>
+    {{details.detailsData.description}}
+  </div>
+</div>

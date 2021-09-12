@@ -1,10 +1,10 @@
 <div class="goods-cont">
   <!-- <div class="good-cont" *ngFor="let item of goods$|async"> {{item | json}}</div> -->
   <div class="good-cont" *ngFor="let item of goods$|async">
-    <div class="image">
+    <div class="image" [routerLink]="['/goods/item', item.id]">
       <img src="{{item.imageUrls[0]}}" alt="good picture">
     </div>
-    <h4 class="title">{{item.name}}</h4>
+    <h4 class="title" [routerLink]="['/goods/item', item.id]">{{item.name}}</h4>
     <div class="available" *ngIf="item.availableAmount">
       <div class="available-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='20px' height='20px'>
@@ -93,7 +93,7 @@
 
     <div class="btns-cont">
       <button type="button" class="btn btn-danger basket-btn">В корзину</button>
-      <div class="favorite" (click)="addToFavoriteFunc($event)">
+      <div class="favorite" (click)="addToFavoriteFunc($event, item.isFavorite)">
         <svg height="45px" style="enable-background:new 0 0 140 130;" version="1.1" viewBox="0 0 140 130" width="45px"
           xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <style type="text/css">
@@ -123,4 +123,5 @@
       </div>
     </div>
   </div>
+
 </div>

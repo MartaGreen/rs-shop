@@ -26,10 +26,14 @@ export class GoodsPageComponent implements OnInit {
     );
   }
 
-  addToFavoriteFunc(event: Event) {
-    const elem: HTMLDivElement | null = (<HTMLElement>event.target).closest('.favorite');
-    if (elem) {
-      elem.classList.add('addedToFavorite');
+  addToFavoriteFunc(event: Event, isFavorite: boolean) {
+    if (isFavorite) {
+      const elem: HTMLDivElement | null = (<HTMLElement>event.target).closest(
+        '.favorite',
+      );
+      if (elem) {
+        elem.classList.add('addedToFavorite');
+      }
     }
   }
 }

@@ -20,7 +20,6 @@ export class GoodsCatalogComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(getAllCategories());
-    console.log('start');
     this.searchedData$.subscribe((data) => {
       this.searchedData = data;
     });

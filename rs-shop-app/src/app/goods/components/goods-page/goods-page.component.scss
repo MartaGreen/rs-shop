@@ -18,6 +18,7 @@
       width: 80%;
 
       margin: 5px auto 300px auto;
+      cursor: pointer;
 
       img {
         max-height: 160px;
@@ -34,6 +35,11 @@
 
       top: 200px;
       left: 5%;
+
+      &:hover {
+        color: rgb(255, 30, 0);
+        cursor: pointer;
+      }
     }
 
     .available {

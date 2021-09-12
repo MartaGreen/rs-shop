@@ -30,7 +30,7 @@
     transition: 0.5s;
 
     &:hover {
-      background-color: rgb(236, 233, 233);
+      background: linear-gradient(to bottom, rgb(247, 164, 40), rgb(251, 253, 108));
       cursor: pointer;
     }
   }
