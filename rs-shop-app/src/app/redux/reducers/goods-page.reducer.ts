@@ -20,4 +20,14 @@ export const goodsReducer = createReducer(
     ...state,
     goods: [],
   })),
+  on(goodsActions.goodsSortAction, (state) => ({
+    ...state,
+  })),
+  on(goodsActions.goodsSortSuccessAction, (state, { sortedGoods }) => ({
+    ...state,
+    goods: sortedGoods,
+  })),
+  on(goodsActions.goodsSortFailAction, (state, { err }) => ({
+    ...state,
+  })),
 );

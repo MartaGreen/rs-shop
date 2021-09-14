@@ -18,9 +18,9 @@ export class GoodsService {
     return this.http.get<ICategory[]>(`${SERVER_ADDRESS}/categories`);
   }
 
-  sendGetGoodsReq(path: { path: string }): Observable<IGood[]> {
+  sendGetGoodsReq(path: string): Observable<IGood[]> {
     this.clearGoodsFunc();
-    return this.http.get<IGood[]>(`${SERVER_ADDRESS}/goods/category${path.path}`);
+    return this.http.get<IGood[]>(`${SERVER_ADDRESS}/goods/category${path}`);
   }
 
   sendGetGoodItem(itemId: string) {
@@ -35,4 +35,16 @@ export class GoodsService {
   clearDetailsFunc() {
     this.store.dispatch(clearDetails());
   }
+
+  // sortGoods(path: { path: string }, type: string): Observable<IGood[]> {
+  //   this.clearGoodsFunc();
+  //   const reqResult =  this.http.get<IGood[]>(`${SERVER_ADDRESS}/goods/category${path.path}`);
+
+  //   if (type === 'price') {
+  //     return reqResult.pipe(
+  //       filter(goodsArr => goodsArr.)
+  //     )
+  //   }
+
+  // }
 }

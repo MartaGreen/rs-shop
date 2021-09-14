@@ -14,3 +14,16 @@ export const getGoodsFailAction = createAction(
   props<{ err: Error }>(),
 );
 export const clearGoodsAction = createAction('[ClearGoods] Clear goods');
+
+export const goodsSortAction = createAction(
+  '[GoodsSort] Goods sorting',
+  props<{ sortType: string; path: string; flag: boolean }>(),
+);
+export const goodsSortSuccessAction = createAction(
+  '[GoodsSort] Goods sorting success',
+  props<{ sortedGoods: IGood[] }>(),
+);
+export const goodsSortFailAction = createAction(
+  '[GoodsSort] Goods sorting',
+  props<{ err: Error }>(),
+);

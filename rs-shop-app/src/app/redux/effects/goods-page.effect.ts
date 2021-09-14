@@ -12,7 +12,7 @@ export class getGoodsEffect {
       ofType(goodsActions.getGoodsAction),
       switchMap((path) =>
         this.service
-          .sendGetGoodsReq(path)
+          .sendGetGoodsReq(path.path)
           .pipe(
             map((goodsArr: IGood[]) => goodsActions.getGoodsSuccessAction({ goodsArr })),
           ),

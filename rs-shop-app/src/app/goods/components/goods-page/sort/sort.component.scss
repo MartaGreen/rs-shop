@@ -1,0 +1,46 @@
+.sort-cont {
+  width: 37%;
+  margin: 0 auto;
+  padding: 10px;
+
+  display: flex;
+  justify-content: space-between;
+
+  border: 3px solid orange;
+  border-top: none;
+
+  .sort-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .sort-by {
+    display: flex;
+
+    .sort-by-icon {
+      visibility: hidden;
+      margin-top: -4px;
+    }
+
+    .sort-by-title {
+      font-size: 18px;
+    }
+
+    &:hover,
+    &.active {
+      cursor: pointer;
+      color: rgb(255, 115, 0);
+      text-decoration: orange underline;
+    }
+
+    &.active {
+      .reverseIcon {
+        transform: rotate(180deg);
+      }
+
+      .sort-by-icon {
+        visibility: visible;
+      }
+    }
+  }
+}

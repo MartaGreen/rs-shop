@@ -1,6 +1,6 @@
 .goods-cont {
   width: 70%;
-  margin: 50px auto;
+  margin: 60px auto;
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));
@@ -60,7 +60,7 @@
 
     .rating {
       position: absolute;
-      top: 305px;
+      top: 315px;
       left: 21%;
 
       width: 60%;

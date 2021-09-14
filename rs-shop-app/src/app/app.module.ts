@@ -11,6 +11,7 @@ import { DetailsEffect } from './redux/effects/details.effect';
 import { categoriesEffect } from './redux/effects/get-categories.effect';
 import { allCategoriesEffect } from './redux/effects/goods-catalog.effect';
 import { getGoodsEffect } from './redux/effects/goods-page.effect';
+import { SortEffect } from './redux/effects/goods-sort.effect';
 import { LocationEffect } from './redux/effects/location.effect';
 import { reducers } from './redux/reducers/register-reducers';
 
@@ -28,6 +29,7 @@ import { reducers } from './redux/reducers/register-reducers';
       allCategoriesEffect,
       getGoodsEffect,
       DetailsEffect,
+      SortEffect,
     ]),
     GoodsModule,
   ],
