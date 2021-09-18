@@ -10,6 +10,7 @@ import { SearchFieldComponent } from './header/components/nav/search-field/searc
 import { HeaderTemplateComponent } from './header/components/pages/header-template/header-template.component';
 import { LocationService } from './header/services/location.service';
 import { SearchService } from './header/services/search.service';
+import { CategoriesNavComponent } from './header/components/categories-nav/categories-nav.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SearchService } from './header/services/search.service';
     NavComponent,
     SearchFieldComponent,
     HeaderTemplateComponent,
+    CategoriesNavComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [HeaderTemplateComponent],

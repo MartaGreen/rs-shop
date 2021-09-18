@@ -45,11 +45,6 @@ export class SearchFieldComponent implements OnInit {
   }
 
   onBlurEvent(event: Event) {
-    // console.log('test');
-    // if ((<HTMLElement>event.target).closest('.searched-results')) {
-    //   this.showSearchedResults = false;
-    //   console.log('test2');
-    // }
     setTimeout(() => (this.showSearchedResults = false), 100);
   }
   onFocusEvent() {

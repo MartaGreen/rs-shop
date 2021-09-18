@@ -10,3 +10,7 @@ export const getAllCategoriesFail = createAction(
   '[GetAllCategories] Get all categories fail',
   props<{ err: Error }>(),
 );
+
+export const clearAllCategoriesAction = createAction(
+  '[ClearCategories] Clear all categories',
+);
