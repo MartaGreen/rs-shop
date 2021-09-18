@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+@media only screen and (max-width: 1020px) {
+  .contacts {
+    width: 50% !important;
+    min-width: 120px !important;
+    .phone {
+      display: none;
+    }
+    .tel-show {
+      display: block !important;
+    }
+  }
+
+  .payment {
+    width: 22% !important;
+    min-width: 170px !important;
+
+    .hide-payment {
+      display: none;
+    }
+
+    .show-payment {
+      display: block;
+    }
+  }
+}
+
+@media only screen and (max-width: 1260px) {
+  .nav-cont {
+    width: 90% !important;
+    margin: 0 auto;
+    .nav-item {
+      .name {
+        display: none;
+        // margin: 0 5px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .payment {
+    width: 7% !important;
+    min-width: 70px !important;
+
+    .hide-payment2 {
+      display: none;
+    }
+
+    .show-payment2 {
+      display: block;
+    }
+  }
+}
