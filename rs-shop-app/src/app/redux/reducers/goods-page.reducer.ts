@@ -16,16 +16,29 @@ export const goodsReducer = createReducer(
   on(goodsActions.getGoodsFailAction, (state, { err }) => ({
     ...state,
   })),
+
   on(goodsActions.clearGoodsAction, (state) => ({
     ...state,
     goods: [],
   })),
+
   on(goodsActions.goodsSortAction, (state) => ({
     ...state,
   })),
   on(goodsActions.goodsSortSuccessAction, (state, { sortedGoods }) => ({
     ...state,
     goods: sortedGoods,
+  })),
+  on(goodsActions.goodsSortFailAction, (state, { err }) => ({
+    ...state,
+  })),
+
+  on(goodsActions.getGoodsForSaleAction, (state) => ({
+    ...state,
+  })),
+  on(goodsActions.getGoodsForSaleSuccessAction, (state, { goodsForSaleArr }) => ({
+    ...state,
+    saleGoods: goodsForSaleArr,
   })),
   on(goodsActions.goodsSortFailAction, (state, { err }) => ({
     ...state,

@@ -13,6 +13,7 @@ export const getGoodsFailAction = createAction(
   '[GetGoods] get goods',
   props<{ err: Error }>(),
 );
+
 export const clearGoodsAction = createAction('[ClearGoods] Clear goods');
 
 export const goodsSortAction = createAction(
@@ -25,5 +26,15 @@ export const goodsSortSuccessAction = createAction(
 );
 export const goodsSortFailAction = createAction(
   '[GoodsSort] Goods sorting',
+  props<{ err: Error }>(),
+);
+
+export const getGoodsForSaleAction = createAction('[GoodsInSale] Get goods for sale');
+export const getGoodsForSaleSuccessAction = createAction(
+  '[GoodsInSale] Get goods for sale success',
+  props<{ goodsForSaleArr: IGood[] }>(),
+);
+export const getSalesGoodsFailAction = createAction(
+  '[GoodsInSale] Get getGoodsForSaleAction for sale fail',
   props<{ err: Error }>(),
 );

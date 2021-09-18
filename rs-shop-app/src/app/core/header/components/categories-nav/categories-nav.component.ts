@@ -1,10 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import {
-  clearAllCategoriesAction,
-  getAllCategories,
-} from 'src/app/redux/actions/goods-catalog.action';
+import { getAllCategories } from 'src/app/redux/actions/goods-catalog.action';
 import { getGoodsAction } from 'src/app/redux/actions/goods.page.action';
 import { allCategoriesSelector } from 'src/app/redux/selectors/goods-catalog.selector';
 
@@ -28,7 +25,6 @@ export class CategoriesNavComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.store.dispatch(clearAllCategoriesAction());
     this.store.dispatch(getAllCategories());
   }
 

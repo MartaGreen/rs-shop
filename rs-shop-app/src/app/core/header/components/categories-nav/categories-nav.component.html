@@ -1,7 +1,7 @@
 <div class="categories-cont">
 
   <nav class="categories">
-    <div class="category sale-category">Акционные товары</div>
+    <div class="category sale-category" [routerLink]="['goods/isInSales']">Акционные товары</div>
     <div class="category" *ngFor="let category of searchedData$ | async"
       [routerLink]="['/goods/category/', category.id, category.subCategories[0].id]"
       (click)="goToCategory('/goods/category/', category.id, category.subCategories[0].id)">

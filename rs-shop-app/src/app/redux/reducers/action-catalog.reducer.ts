@@ -1,6 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
 import {
-  clearAllCategoriesAction,
   getAllCategories,
   getAllCategoriesFail,
   getAllCategoriesSuccess,
@@ -20,9 +19,5 @@ export const getAllCategoriesReducer = createReducer(
   })),
   on(getAllCategoriesFail, (state, { err }) => ({
     ...state,
-  })),
-  on(clearAllCategoriesAction, (state) => ({
-    ...state,
-    allCategories: [],
   })),
 );

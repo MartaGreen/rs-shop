@@ -12,4 +12,5 @@ export interface IGood {
   description: string;
   isInCart: boolean;
   isFavorite: boolean;
+  isInSale?: boolean;
 }

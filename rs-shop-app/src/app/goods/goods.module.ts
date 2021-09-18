@@ -6,6 +6,7 @@ import { GoodsPageComponent } from './components/goods-page/goods-page.component
 import { SortComponent } from './components/goods-page/sort/sort.component';
 import { GoodsRoutingModule } from './goods-routhing.module';
 import { GoodsService } from './services/goods.service';
+import { SalesGoodsComponent } from './components/sales-goods/sales-goods.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { GoodsService } from './services/goods.service';
     GoodsPageComponent,
     GoodsDetailsComponent,
     SortComponent,
+    SalesGoodsComponent,
   ],
   imports: [CommonModule, GoodsRoutingModule],
   providers: [GoodsService],
