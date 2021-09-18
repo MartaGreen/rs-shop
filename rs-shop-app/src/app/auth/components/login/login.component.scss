@@ -1,0 +1,57 @@
+.form-cont {
+  position: relative;
+
+  width: 90%;
+
+  margin: 10px auto;
+
+  .title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .form-input {
+    margin-bottom: 20px;
+  }
+
+  .login-btn {
+    margin: 0 auto;
+    background: linear-gradient(to right, #ff3c00, #ffa600);
+    border: 1px solid #ffa600;
+  }
+
+  .register-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.user-cont {
+  position: relative;
+
+  padding: 20px;
+
+  .avatar {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 10px auto;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .logout-btn {
+    display: block;
+    margin: 30px auto 0 auto;
+    background: linear-gradient(to right, #ff3c00, #ffa600);
+    border: 1px solid #ffa600;
+
+    &:hover {
+      color: yellow;
+    }
+  }
+}

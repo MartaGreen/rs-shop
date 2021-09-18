@@ -1,0 +1,26 @@
+<div *ngIf="user; then logged else notLogged"></div>
+<ng-template #notLogged>
+  <div class="form-cont">
+    <h3 class="title">Login</h3>
+    <div class="col-auto form-input">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">@</div>
+        </div>
+        <input type="email" class="form-control" id="inlineFormInputGroup" placeholder="Имя пользователя">
+      </div>
+    </div>
+    <div class="form-group form-input">
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary login-btn">Login</button>
+    <button class="btn btn-link register-btn" (click)="openRegisterWindow()">Зарегестрироваться</button>
+  </div>
+</ng-template>
+<ng-template #logged>
+  <div class="user-cont">
+    <img src="{{user.avatar}}" alt="avatar" class="avatar">
+    <h3 class="title">{{user.name}}</h3>
+    <button class="btn btn-primary logout-btn" (click)="logoutFunc()">Logout</button>
+  </div>
+</ng-template>

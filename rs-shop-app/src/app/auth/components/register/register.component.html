@@ -1,0 +1,62 @@
+<div class="register-window" #window>
+  <div class="close-btn" (click)="closeRegisterWindow(window)">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <style>
+          .cls-1 {
+            fill: black;
+            stroke: #000;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 2px;
+          }
+        </style>
+      </defs>
+      <g id="cross">
+        <line class="cls-1" x1="7" x2="25" y1="7" y2="25" />
+        <line class="cls-1" x1="7" x2="25" y1="25" y2="7" />
+      </g>
+    </svg>
+  </div>
+  <div class="form-cont">
+    <h3 class="title">Register</h3>
+
+    <div class="col-auto form-input">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">@</div>
+        </div>
+        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Имя пользователя" #name>
+      </div>
+    </div>
+    <div class="input-group mb-3">
+      <input type="email" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
+        aria-describedby="basic-addon2" #email>
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon2">@example.com</span>
+      </div>
+    </div>
+    <div class="form-group form-input">
+      <input type="password" class="form-control password" placeholder="Password" #password>
+    </div>
+    <div class="form-group form-input">
+      <input type="password" class="form-control confirmation" placeholder="Confirmation" #confirmation>
+    </div>
+
+    <div class="btn-cont">
+      <button type="submit" class="btn btn-primary login-btn"
+        (click)="createUserFunc(name, email, password, confirmation)">Register</button>
+
+      <div class="example-2">
+        <div class="form-group">
+          <input type="file" name="file" id="file" class="input-file avatar-input">
+          <label for="file" class="btn btn-tertiary js-labelFile">
+            <i class="icon fa fa-check"></i>
+            <span class="js-fileName">Загрузить аватар</span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

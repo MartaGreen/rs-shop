@@ -5,6 +5,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { GoodsModule } from './goods/goods.module';
 import { DetailsEffect } from './redux/effects/details.effect';
@@ -34,6 +35,7 @@ import { reducers } from './redux/reducers/register-reducers';
       getSaleGoodsEffect,
     ]),
     GoodsModule,
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
