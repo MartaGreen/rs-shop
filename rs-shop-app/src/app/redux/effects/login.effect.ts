@@ -17,7 +17,10 @@ export class LoginEffect {
           .pipe(
             mergeMap((token) => {
               return this.service.sendGetUserDataReq(token.token).pipe(
-                map((userData) => getUsersSuccessAction({ userData: userData })),
+                map((userData) => {
+                  userData.token = token.token;
+                  return getUsersSuccessAction({ userData: userData });
+                }),
                 catchError((err) => {
                   console.log('not authorized');
                   return of('err', err);

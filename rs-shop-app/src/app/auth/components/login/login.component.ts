@@ -3,7 +3,6 @@ import { Store } from '@ngrx/store';
 import { getUsersAction } from 'src/app/redux/actions/login.action';
 import { IUserInitialState } from 'src/app/redux/models/login.model';
 import { loginSelector } from 'src/app/redux/selectors/login.selector';
-import { IUser } from '../../models/user.model';
 import { LoginService } from '../../services/login.service';
 
 @Component({
@@ -13,7 +12,7 @@ import { LoginService } from '../../services/login.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent implements OnInit {
-  user: IUser = this.service.getUsername();
+  user: IUserInitialState = this.service.getUsername();
   userData$ = this.store.select(loginSelector);
   userData?: IUserInitialState;
 
@@ -22,8 +21,17 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.userData$.subscribe((data: { userData: IUserInitialState }) => {
       this.userData = data.userData;
-      this.service.addUser(data.userData?.firstName, data.userData?.lastName);
+      this.service.addUser(
+        data.userData?.firstName,
+        data.userData?.lastName,
+        data.userData?.cart,
+        data.userData?.favorites,
+        data.userData?.orders,
+        data.userData?.token,
+      );
     });
+
+    console.log(this.user);
   }
 
   openRegisterWindow() {

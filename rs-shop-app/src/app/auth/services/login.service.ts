@@ -1,15 +1,15 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IGood } from 'src/app/redux/models/details.model';
 import { IUserInitialState } from 'src/app/redux/models/login.model';
 import { SERVER_ADDRESS } from 'src/app/shared/constants';
-import { IUser } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
-  userData: IUser = {} as IUser;
+  userData: IUserInitialState = {} as IUserInitialState;
   flag = new Observable<boolean>((subscriber) => {
     if (localStorage.getItem('user')) {
       subscriber.next(true);
@@ -20,10 +20,21 @@ export class LoginService {
 
   constructor(private http: HttpClient) {}
 
-  addUser(firstname: string, lastname: string) {
+  addUser(
+    firstname: string,
+    lastname: string,
+    cart: IGood[],
+    favorites: IGood[],
+    orders: IGood[],
+    token: string,
+  ) {
     if (firstname || lastname) {
-      this.userData.firstname = firstname;
-      this.userData.lastname = lastname;
+      this.userData.firstName = firstname;
+      this.userData.lastName = lastname;
+      this.userData.cart = cart;
+      this.userData.favorites = favorites;
+      this.userData.orders = orders;
+      this.userData.token = token;
       localStorage.setItem('user', JSON.stringify(this.userData));
       window.location.reload();
     }

@@ -20,18 +20,21 @@ export class RegisterComponent implements OnInit {
   }
 
   createUserFunc(
-    name: HTMLInputElement,
-    email: HTMLInputElement,
+    firstName: HTMLInputElement,
+    lastName: HTMLInputElement,
+    username: HTMLInputElement,
     password: HTMLInputElement,
     confirmation: HTMLInputElement,
   ) {
-    name.classList.remove('warning');
-    email.classList.remove('warning');
+    firstName.classList.remove('warning');
+    lastName.classList.remove('warning');
     confirmation.classList.remove('warning');
     password.classList.remove('warning');
+    username.classList.remove('warning');
 
-    if (!name.value) name.classList.add('warning');
-    if (!email.value) email.classList.add('warning');
+    if (!firstName.value) firstName.classList.add('warning');
+    if (!lastName.value) lastName.classList.add('warning');
+    if (!username.value) username.classList.add('warning');
     if (!password.value) password.classList.add('warning');
     if (!confirmation.value) confirmation.classList.add('warning');
     if (confirmation.value !== password.value) {
@@ -40,10 +43,7 @@ export class RegisterComponent implements OnInit {
     }
 
     if (!document.querySelector('.warning')) {
-      // const avatar: any = document.querySelector('.avatar-input');
-      // const url: string = avatar.files[0].name;
-      // console.log(url);
-      // this.service.addUser(name.value, email.value, password.value, USER_DEFAULT_AVATAR);
+      this.service.addUser(firstName.value, lastName.value, [], [], [], '');
 
       setTimeout(() => window.location.reload(), 0);
     }
