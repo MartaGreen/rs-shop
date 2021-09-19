@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { getGoodsAction } from 'src/app/redux/actions/goods.page.action';
 import { goodsSelector } from 'src/app/redux/selectors/goods-page.selector';
+import { getColor } from 'src/app/shared/functions/colors';
 
 @Component({
   selector: 'app-goods-page',
@@ -12,6 +13,8 @@ import { goodsSelector } from 'src/app/redux/selectors/goods-page.selector';
 export class GoodsPageComponent implements OnInit {
   subCategory?: { categoryId: string; subCategoryId: string };
   goods$ = this.store.select(goodsSelector);
+  getColor = getColor;
+
   constructor(private router: ActivatedRoute, private store: Store) {}
 
   ngOnInit(): void {

@@ -74,7 +74,7 @@ export class LoginService {
   sendRegisterUserReq(userData: IRegisterUserData) {
     return this.http.post<{ token: string }>(`${SERVER_ADDRESS}/users/register`, {
       firstName: userData.firstName,
-      lastNAme: userData.lastName,
+      lastName: userData.lastName,
       login: userData.login,
       password: userData.password,
     });

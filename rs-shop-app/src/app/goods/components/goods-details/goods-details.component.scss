@@ -2,6 +2,7 @@
   position: relative;
   width: 60%;
   min-width: 480px;
+  max-width: 800px;
   margin: 70px auto;
 
   .title {
@@ -35,10 +36,10 @@
     display: flex;
 
     .images-cont {
-      width: 13%;
+      width: 17%;
 
       overflow-y: auto;
-      max-height: 310px;
+      max-height: 350px;
 
       .image {
         width: 100%;
@@ -65,40 +66,23 @@
 
     #detailsSlider {
       position: relative;
-      width: 50%;
+      width: 80%;
       // min-height: 50vh;
-      height: 310px;
-      margin: 0 0 0 9%;
+      height: 350px;
+      margin: 0 0 0 8%;
       padding: 25px;
       vertical-align: middle;
 
       box-shadow: 0 0 5px rgb(211, 209, 209);
-
-      .sales {
-        position: absolute;
-        top: 0;
-        right: 0;
-
-        .st0 {
-          fill-rule: evenodd;
-          clip-rule: evenodd;
-          fill: #fdb913;
-        }
-
-        .st1 {
-          fill: none;
-        }
-      }
-
       .carousel-inner {
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
 
         img {
           margin: 0 auto;
           width: auto;
-          max-width: 90%;
-          max-height: 260px;
+          max-width: 89%;
+          max-height: 290px;
         }
       }
 
