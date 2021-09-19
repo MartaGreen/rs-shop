@@ -1,0 +1,10 @@
+<div *ngIf="cartItems[0]; then cart else emptyCart"></div>
+<ng-template #cart>
+  <div *ngFor="let item of cartItems">{{item}}</div>
+</ng-template>
+
+<ng-template #emptyCart>
+  <div>cart is empty</div>
+</ng-template>
+
+<div>{{cartItemsData|json}}</div>

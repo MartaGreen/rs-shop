@@ -19,6 +19,7 @@ import { LoginEffect } from './redux/effects/login.effect';
 import { RegisterEffect } from './redux/effects/register.effect';
 import { getSaleGoodsEffect } from './redux/effects/sales.effect';
 import { reducers } from './redux/reducers/register-reducers';
+import { UsersGoodsModule } from './users-goods/users-goods.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -42,6 +43,7 @@ import { reducers } from './redux/reducers/register-reducers';
     ]),
     GoodsModule,
     AuthModule,
+    UsersGoodsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
