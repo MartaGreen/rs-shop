@@ -8,3 +8,10 @@ export interface IUserInitialState {
   orders: IGood[];
   token: string;
 }
+
+export interface IRegisterUserData {
+  firstName: string;
+  lastName: string;
+  login: string;
+  password: string;
+}

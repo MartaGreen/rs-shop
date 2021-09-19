@@ -1,5 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { LoginService } from '../../services/login.service';
+import { Store } from '@ngrx/store';
+import { registerUserAction } from 'src/app/redux/actions/user.action';
+import { IRegisterUserData } from 'src/app/redux/models/user.model';
+import { registerSelector } from 'src/app/redux/selectors/user.selector';
+import { LoginService } from '../../services/user.service';
 
 const USER_DEFAULT_AVATAR =
   'https://okeygeek.ru/wp-content/uploads/2020/03/no_avatar.png';
@@ -11,9 +15,32 @@ const USER_DEFAULT_AVATAR =
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegisterComponent implements OnInit {
-  constructor(private service: LoginService) {}
+  token$ = this.store.select(registerSelector);
+  userData?: IRegisterUserData;
 
-  ngOnInit(): void {}
+  constructor(private service: LoginService, private store: Store) {}
+
+  ngOnInit(): void {
+    this.token$.subscribe((data) => {
+      console.log('token is', data);
+
+      if (data.token) {
+        console.log('create user');
+        setTimeout(
+          () =>
+            this.service.addUser(
+              this.userData!.firstName,
+              this.userData!.lastName,
+              [],
+              [],
+              [],
+              data.token!,
+            ),
+          0,
+        );
+      }
+    });
+  }
 
   closeRegisterWindow(windowElem: HTMLDivElement) {
     windowElem.classList.remove('opened');
@@ -43,9 +70,18 @@ export class RegisterComponent implements OnInit {
     }
 
     if (!document.querySelector('.warning')) {
-      this.service.addUser(firstName.value, lastName.value, [], [], [], '');
-
-      setTimeout(() => window.location.reload(), 0);
+      const userData: IRegisterUserData = {
+        firstName: firstName.value,
+        lastName: lastName.value,
+        login: username.value,
+        password: password.value,
+      };
+      this.userData = userData;
+      setTimeout(
+        () => this.store.dispatch(registerUserAction({ userData: userData })),
+        0,
+      );
+      // setTimeout(() => window.location.reload(), 0);
     }
   }
 }

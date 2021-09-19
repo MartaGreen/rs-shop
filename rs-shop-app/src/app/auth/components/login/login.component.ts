@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { getUsersAction } from 'src/app/redux/actions/login.action';
-import { IUserInitialState } from 'src/app/redux/models/login.model';
-import { loginSelector } from 'src/app/redux/selectors/login.selector';
-import { LoginService } from '../../services/login.service';
+import { getUsersAction } from 'src/app/redux/actions/user.action';
+import { IUserInitialState } from 'src/app/redux/models/user.model';
+import { loginSelector } from 'src/app/redux/selectors/user.selector';
+import { LoginService } from '../../services/user.service';
 
 @Component({
   selector: 'app-login',

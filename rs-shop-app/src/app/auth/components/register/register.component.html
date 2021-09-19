@@ -27,12 +27,12 @@
         <div class="form-input">
           <label for="validationDefault01">First name</label>
           <input type="text" class="form-control" id="validationDefault01" placeholder="First name" placeholder="Mark"
-            required>
+            required #firstName>
         </div>
         <div class="form-input">
           <label for="validationDefault02">Last name</label>
           <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" placeholder="Otto"
-            required>
+            required #lastName>
         </div>
       </div>
 
@@ -43,18 +43,19 @@
             <span class="input-group-text" id="inputGroupPrepend2">@</span>
           </div>
           <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username"
-            aria-describedby="inputGroupPrepend2" required>
+            aria-describedby="inputGroupPrepend2" required #login>
         </div>
       </div>
       <div class="form-group form-input">
         <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" #password>
       </div>
       <div class="form-group form-input">
         <label for="exampleInputPassword1">Confirmation</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirmation">
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirmation" #confirmation>
       </div>
     </div>
-    <button class="btn btn-primary btn login-btn" type="submit">Register</button>
+    <button class="btn btn-primary btn login-btn" type="submit"
+      (click)="createUserFunc(firstName, lastName, login, password, confirmation)">Register</button>
   </div>
 </div>

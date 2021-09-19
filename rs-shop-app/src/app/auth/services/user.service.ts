@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IGood } from 'src/app/redux/models/details.model';
-import { IUserInitialState } from 'src/app/redux/models/login.model';
+import { IRegisterUserData, IUserInitialState } from 'src/app/redux/models/user.model';
 import { SERVER_ADDRESS } from 'src/app/shared/constants';
 
 @Injectable({
@@ -68,6 +68,15 @@ export class LoginService {
 
     return this.http.get<IUserInitialState>(`${SERVER_ADDRESS}/users/userInfo`, {
       headers: headers,
+    });
+  }
+
+  sendRegisterUserReq(userData: IRegisterUserData) {
+    return this.http.post<{ token: string }>(`${SERVER_ADDRESS}/users/register`, {
+      firstName: userData.firstName,
+      lastNAme: userData.lastName,
+      login: userData.login,
+      password: userData.password,
     });
   }
 }
