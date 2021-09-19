@@ -4,7 +4,7 @@ import { DETAILS_KEY } from '../selectors/details.selector';
 import { CATEGORIES_KEY } from '../selectors/get-categories.selector';
 import { ALL_CATEGORIES_KEY } from '../selectors/goods-catalog.selector';
 import { GOODS_KEY } from '../selectors/goods-page.selector';
-import { LOGIN_KEY, REGISTER_KEY } from '../selectors/user.selector';
+import { ADD_TO_CART_KEY, LOGIN_KEY, REGISTER_KEY } from '../selectors/user.selector';
 import { IDetails } from './details.model';
 import { IAllCategories } from './goods-catalog.model';
 import { IGoods } from './goods-page.model';
@@ -19,4 +19,5 @@ export interface IRegisterReducers {
   [DETAILS_KEY]: IDetails;
   [LOGIN_KEY]: IUserInitialState;
   [REGISTER_KEY]: { token: string };
+  [ADD_TO_CART_KEY]: IUserInitialState;
 }

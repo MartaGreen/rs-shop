@@ -31,3 +31,17 @@ export const registerUserReducer = createReducer(
     ...state,
   })),
 );
+
+export const addToCartReducer = createReducer(
+  userInitialState,
+  on(userActions.addToCartAction, (state, { id }) => ({
+    ...state,
+  })),
+  on(userActions.addToCartSuccessAction, (state, { cartItem }) => ({
+    ...state,
+    cart: [cartItem],
+  })),
+  on(userActions.addToCartAction, (state, { id }) => ({
+    ...state,
+  })),
+);

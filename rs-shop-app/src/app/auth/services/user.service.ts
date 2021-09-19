@@ -23,7 +23,7 @@ export class LoginService {
   addUser(
     firstname: string,
     lastname: string,
-    cart: IGood[],
+    cart: string[],
     favorites: IGood[],
     orders: IGood[],
     token: string,
@@ -47,6 +47,12 @@ export class LoginService {
 
   rmUser() {
     localStorage.clear();
+  }
+
+  addUserCartItem(itemId: string) {
+    const user = this.getUsername();
+    user.cart.push(itemId);
+    localStorage.setItem('user', JSON.stringify(user));
   }
 
   getFlag() {
@@ -78,5 +84,22 @@ export class LoginService {
       login: userData.login,
       password: userData.password,
     });
+  }
+
+  sendAddToCartReq(id: string) {
+    console.log('token', this.getUsername().token);
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.getUsername().token}`,
+    });
+
+    return this.http.post(
+      `${SERVER_ADDRESS}/users/cart`,
+      { id: id },
+      {
+        headers: headers,
+      },
+    );
   }
 }

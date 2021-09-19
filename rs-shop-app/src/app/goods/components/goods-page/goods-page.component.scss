@@ -65,7 +65,7 @@
     .available {
       position: absolute;
       top: 270px;
-      left: 29%;
+      left: 28%;
 
       display: flex;
       justify-content: space-between;
@@ -113,7 +113,16 @@
         width: 80%;
         background: linear-gradient(to right, rgb(255, 60, 0), rgb(255, 166, 0));
 
+        &.addedToCart,
         &:hover {
+          background: linear-gradient(to right, rgb(99, 96, 96), rgb(187, 187, 186));
+          border: 1px solid gray;
+        }
+
+        &.addedToCart {
+          &:hover {
+            cursor: default;
+          }
         }
       }
 

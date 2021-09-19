@@ -68,12 +68,29 @@
       position: relative;
       width: 80%;
       // min-height: 50vh;
-      height: 350px;
+      height: 360px;
       margin: 0 0 0 8%;
       padding: 25px;
       vertical-align: middle;
 
       box-shadow: 0 0 5px rgb(211, 209, 209);
+
+      .sales {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+
+        .st0 {
+          fill-rule: evenodd;
+          clip-rule: evenodd;
+          fill: #fdb913;
+        }
+
+        .st1 {
+          fill: none;
+        }
+      }
+
       .carousel-inner {
         width: 100%;
         margin: 0 auto;
@@ -82,7 +99,7 @@
           margin: 0 auto;
           width: auto;
           max-width: 89%;
-          max-height: 290px;
+          max-height: 270px;
         }
       }
 
