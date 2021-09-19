@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { getAllCategories } from 'src/app/redux/actions/goods-catalog.action';
 import { getGoodsAction } from 'src/app/redux/actions/goods.page.action';
@@ -14,15 +13,7 @@ import { allCategoriesSelector } from 'src/app/redux/selectors/goods-catalog.sel
 export class CategoriesNavComponent implements OnInit {
   searchedData$ = this.store.select(allCategoriesSelector);
 
-  constructor(
-    private store: Store,
-    private activeRouter: ActivatedRoute,
-    private router: Router,
-  ) {
-    this.searchedData$.subscribe((data) => {
-      console.log(data);
-    });
-  }
+  constructor(private store: Store) {}
 
   ngOnInit(): void {
     this.store.dispatch(getAllCategories());

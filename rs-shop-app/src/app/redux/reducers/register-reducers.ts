@@ -5,11 +5,13 @@ import { DETAILS_KEY } from '../selectors/details.selector';
 import { CATEGORIES_KEY } from '../selectors/get-categories.selector';
 import { ALL_CATEGORIES_KEY } from '../selectors/goods-catalog.selector';
 import { GOODS_KEY } from '../selectors/goods-page.selector';
+import { LOGIN_KEY } from '../selectors/login.selector';
 import { getAllCategoriesReducer } from './action-catalog.reducer';
 import { detailsReducer } from './details.reducer';
 import { categoriesReducer } from './get-categories.reducer';
 import { goodsReducer } from './goods-page.reducer';
 import { locationReducer } from './location.reducer';
+import { getUserReducer } from './login.reducer';
 
 export const reducers: ActionReducerMap<IRegisterReducers> = {
   [LOCATION_KEY]: locationReducer,
@@ -17,4 +19,5 @@ export const reducers: ActionReducerMap<IRegisterReducers> = {
   [ALL_CATEGORIES_KEY]: getAllCategoriesReducer,
   [GOODS_KEY]: goodsReducer,
   [DETAILS_KEY]: detailsReducer,
+  [LOGIN_KEY]: getUserReducer,
 };

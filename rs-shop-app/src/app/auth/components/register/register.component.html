@@ -18,45 +18,43 @@
       </g>
     </svg>
   </div>
+
   <div class="form-cont">
     <h3 class="title">Register</h3>
+    <div class="form-row">
 
-    <div class="col-auto form-input">
-      <div class="input-group mb-2">
-        <div class="input-group-prepend">
-          <div class="input-group-text">@</div>
+      <div class="name">
+        <div class="form-input">
+          <label for="validationDefault01">First name</label>
+          <input type="text" class="form-control" id="validationDefault01" placeholder="First name" placeholder="Mark"
+            required>
         </div>
-        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Имя пользователя" #name>
-      </div>
-    </div>
-    <div class="input-group mb-3">
-      <input type="email" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
-        aria-describedby="basic-addon2" #email>
-      <div class="input-group-append">
-        <span class="input-group-text" id="basic-addon2">@example.com</span>
-      </div>
-    </div>
-    <div class="form-group form-input">
-      <input type="password" class="form-control password" placeholder="Password" #password>
-    </div>
-    <div class="form-group form-input">
-      <input type="password" class="form-control confirmation" placeholder="Confirmation" #confirmation>
-    </div>
-
-    <div class="btn-cont">
-      <button type="submit" class="btn btn-primary login-btn"
-        (click)="createUserFunc(name, email, password, confirmation)">Register</button>
-
-      <div class="example-2">
-        <div class="form-group">
-          <input type="file" name="file" id="file" class="input-file avatar-input">
-          <label for="file" class="btn btn-tertiary js-labelFile">
-            <i class="icon fa fa-check"></i>
-            <span class="js-fileName">Загрузить аватар</span>
-          </label>
+        <div class="form-input">
+          <label for="validationDefault02">Last name</label>
+          <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" placeholder="Otto"
+            required>
         </div>
       </div>
 
+      <div class="form-input">
+        <label for="validationDefaultUsername">Username</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend2">@</span>
+          </div>
+          <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username"
+            aria-describedby="inputGroupPrepend2" required>
+        </div>
+      </div>
+      <div class="form-group form-input">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      <div class="form-group form-input">
+        <label for="exampleInputPassword1">Confirmation</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirmation">
+      </div>
     </div>
+    <button class="btn btn-primary btn login-btn" type="submit">Register</button>
   </div>
 </div>

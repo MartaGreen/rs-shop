@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
       // const avatar: any = document.querySelector('.avatar-input');
       // const url: string = avatar.files[0].name;
       // console.log(url);
-      this.service.addUser(name.value, email.value, password.value, USER_DEFAULT_AVATAR);
+      // this.service.addUser(name.value, email.value, password.value, USER_DEFAULT_AVATAR);
 
       setTimeout(() => window.location.reload(), 0);
     }

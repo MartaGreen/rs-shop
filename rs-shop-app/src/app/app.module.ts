@@ -14,6 +14,7 @@ import { allCategoriesEffect } from './redux/effects/goods-catalog.effect';
 import { getGoodsEffect } from './redux/effects/goods-page.effect';
 import { SortEffect } from './redux/effects/goods-sort.effect';
 import { LocationEffect } from './redux/effects/location.effect';
+import { LoginEffect } from './redux/effects/login.effect';
 import { getSaleGoodsEffect } from './redux/effects/sales.effect';
 import { reducers } from './redux/reducers/register-reducers';
 
@@ -33,6 +34,7 @@ import { reducers } from './redux/reducers/register-reducers';
       DetailsEffect,
       SortEffect,
       getSaleGoodsEffect,
+      LoginEffect,
     ]),
     GoodsModule,
     AuthModule,

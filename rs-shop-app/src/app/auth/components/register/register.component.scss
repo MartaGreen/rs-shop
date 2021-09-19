@@ -48,19 +48,23 @@
         }
       }
 
-      .btn-cont {
+      .name {
         display: flex;
         justify-content: space-between;
 
-        .btn {
-          background: linear-gradient(to right, #ff3c00, #ffa600);
-          border: 1px solid #ffa600;
+        .form-input {
+          width: 47%;
+        }
+      }
 
-          margin-right: 15px;
+      .btn {
+        background: linear-gradient(to right, #ff3c00, #ffa600);
+        border: 1px solid #ffa600;
 
-          &:hover {
-            color: yellow;
-          }
+        margin-right: 15px;
+
+        &:hover {
+          color: yellow;
         }
       }
     }
