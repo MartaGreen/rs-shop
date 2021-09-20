@@ -2,7 +2,8 @@
   width: 100%;
   background: linear-gradient(to bottom, rgb(255, 81, 0), rgb(255, 174, 0));
   .categories {
-    width: 70%;
+    width: 80%;
+    max-width: 1200px;
     min-width: 490px;
     overflow-x: auto;
     margin: 0 auto 10px auto;

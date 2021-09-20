@@ -1,0 +1,77 @@
+.main {
+  position: relative;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .carouser-cont {
+    width: 50%;
+    height: 520px;
+
+    margin-top: 40px;
+
+    .title {
+      width: 100%;
+      text-align: center;
+      background: orange;
+      color: white;
+      font-size: 45px;
+      margin: 10px 0;
+      border-radius: 7px 0;
+    }
+
+    .sales-carousel {
+      position: relative;
+
+      cursor: pointer;
+
+      position: relative;
+      width: 100%;
+      height: 480px;
+      padding: 25px;
+      vertical-align: middle;
+
+      box-shadow: 0 0 5px rgb(211, 209, 209);
+
+      .sales {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+
+        .st0 {
+          fill-rule: evenodd;
+          clip-rule: evenodd;
+          fill: #fdb913;
+        }
+
+        .st1 {
+          fill: none;
+        }
+      }
+
+      .carousel-inner {
+        width: 100%;
+        margin: 0 auto;
+
+        img {
+          margin: 0 auto;
+          width: auto;
+          max-width: 90%;
+          max-height: 390px;
+        }
+      }
+
+      .sr-only {
+        color: black;
+      }
+
+      .carousel-control {
+        width: 10%;
+        margin: 0 5px;
+
+        text-align: center;
+      }
+    }
+  }
+}

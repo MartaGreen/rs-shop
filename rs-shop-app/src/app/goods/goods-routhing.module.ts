@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { GoodsCatalogComponent } from './components/goods-catalog/goods-catalog.component';
 import { GoodsDetailsComponent } from './components/goods-details/goods-details.component';
 import { GoodsPageComponent } from './components/goods-page/goods-page.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 import { SalesGoodsComponent } from './components/sales-goods/sales-goods.component';
 
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: 'goods/category/:categoryId/:subCategoryId', component: GoodsPageComponent },
   { path: 'goods/item/:itemId', component: GoodsDetailsComponent },
   { path: 'goods/isInSales', component: SalesGoodsComponent },
+  { path: '', component: MainPageComponent },
 ];
 
 @NgModule({

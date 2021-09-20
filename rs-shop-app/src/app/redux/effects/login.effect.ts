@@ -3,7 +3,11 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, mergeMap, throttleTime } from 'rxjs/operators';
 import { LoginService } from 'src/app/auth/services/user.service';
-import { getUsersAction, getUsersSuccessAction } from '../actions/user.action';
+import {
+  getUsersAction,
+  getUsersFailAction,
+  getUsersSuccessAction,
+} from '../actions/user.action';
 
 @Injectable()
 export class LoginEffect {
@@ -29,7 +33,8 @@ export class LoginEffect {
             }),
             catchError((err) => {
               console.log('wrong password or login', err);
-              return of('err', err);
+              document.querySelector('.body');
+              return of(getUsersFailAction(err));
             }),
           );
       }),

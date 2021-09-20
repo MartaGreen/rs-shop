@@ -8,3 +8,8 @@ export const saleGoodsSelector = createSelector(
   saleGoodsFeatureSelector,
   (state) => state.saleGoods,
 );
+
+// const tenSaleGoodsFeatureSelector = createFeatureSelector<IGoods>(GOODS_KEY);
+// export const tenSaleGoodsSelector = createSelector(tenSaleGoodsFeatureSelector, (state) =>
+//   state.saleGoods.sort(() => Math.random() - Math.random()).slice(0, 10),
+// );
