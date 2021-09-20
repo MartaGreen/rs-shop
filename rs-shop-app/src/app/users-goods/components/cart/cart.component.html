@@ -1,10 +1,45 @@
-<div *ngIf="cartItems[0]; then cart else emptyCart"></div>
+<div *ngIf="cartItemsData; then cart else emptyCart"></div>
+
 <ng-template #cart>
-  <div *ngFor="let item of cartItems">{{item}}</div>
+  <table class="cart-cont">
+    <thead>
+      <tr>
+        <th>Товар</th>
+        <th>Описание товара</th>
+        <th>Количество</th>
+        <th>Доставка</th>
+        <th>Стоимость</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cartItemsData" class="cart-item">
+        <td class="good" *ngIf="item" [routerLink]="['/goods/item', item.id]">
+          <div class="image">
+            <img src="{{item.imageUrls[0]}}" alt="cart item">
+          </div>
+          <h3 class="title">{{item.name}}</h3>
+        </td>
+        <td class="description">{{item.description}}</td>
+        <td class="amount">
+          <input type="button" class="count count-add" value="-" (click)="rmGood(count)">
+          <input type="text" class="count count-data" disabled value="1" #count>
+          <input type="button" class="count count-remove" value="+" (click)="addGood(count)">
+        </td>
+        <td class="delivery">
+          <span class="delivery-item"><b>Самовывоз:</b> сегодня</span> <br>
+          <span class="delivery-item"><b>Курьером:</b> сегодня</span>
+        </td>
+        <!-- <td class="price">{{(Number.parseInt((item|async)?.detailsData?.price) * count)| currency}}</td> -->
+        <td class="price">{{getTotalPrice(count.value, item.price) | currency}}</td>
+      </tr>
+    </tbody>
+  </table>
 </ng-template>
 
 <ng-template #emptyCart>
   <div>cart is empty</div>
 </ng-template>
 
-<div>{{cartItemsData|json}}</div>
+<div *ngFor="let item of cartItems">
+  <!-- <div>{{getItemData(item)|async|json}}</div> -->
+</div>
