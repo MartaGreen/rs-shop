@@ -1,1 +1,1 @@
-export const SERVER_ADDRESS = 'http://localhost:3004';
+export const SERVER_ADDRESS = 'https://rs-shop-back.herokuapp.com';
