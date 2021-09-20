@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AuthModule } from '../auth/auth.module';
+import { FooterTemplateComponent } from './footer/components/footer-template/footer-template.component';
 import { CategoriesNavComponent } from './header/components/categories-nav/categories-nav.component';
 import { ContactsComponent } from './header/components/contacts/contacts.component';
 import { InfoComponent } from './header/components/info/info.component';
@@ -23,9 +24,10 @@ import { SearchService } from './header/services/search.service';
     SearchFieldComponent,
     HeaderTemplateComponent,
     CategoriesNavComponent,
+    FooterTemplateComponent,
   ],
   imports: [CommonModule, RouterModule, AuthModule],
-  exports: [HeaderTemplateComponent],
+  exports: [HeaderTemplateComponent, FooterTemplateComponent],
   providers: [LocationService, SearchService],
 })
 export class CoreModule {}
