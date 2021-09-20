@@ -34,10 +34,6 @@
         </svg>
       </div>
 
-      <!-- <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" *ngFor="let item of saleGoods; let i = index" data-slide-to="i"
-        [ngClass]="{'active': i === 0}"></li>
-    </ol> -->
 
       <div class="carousel-inner">
         <div class="carousel-item" *ngFor="let item of saleGoods; let i = index" [ngClass]="{'active': i === 0}"
@@ -46,14 +42,18 @@
         </div>
       </div>
 
-      <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a> -->
+    </div>
+  </div>
+
+  <div class="advantages">
+    <div class="advantage" *ngFor="let item of advantages">
+      <div class="image">
+        <img src="{{item.img}}" alt="">
+      </div>
+      <div class="description">
+        <h4 class="title">{{item.advantage.title}}</h4>
+        <span class="text">{{item.advantage.text}}</span>
+      </div>
     </div>
   </div>
 </main>

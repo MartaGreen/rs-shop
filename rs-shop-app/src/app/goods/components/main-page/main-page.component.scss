@@ -3,12 +3,13 @@
   width: 80%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 40px 0;
 
   .carouser-cont {
     width: 50%;
     height: 520px;
 
-    margin-top: 40px;
+    margin-right: 5%;
 
     .title {
       width: 100%;
@@ -71,6 +72,42 @@
         margin: 0 5px;
 
         text-align: center;
+      }
+    }
+  }
+
+  .advantages {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+
+    width: 100%;
+    margin: 60px auto;
+
+    border-top: 2px solid orange;
+
+    .advantage {
+      display: flex;
+      margin: 10px 0;
+      padding: 10px;
+
+      .image {
+        max-width: 20%;
+        margin-right: 7px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .description {
+        .title {
+          font-size: 14px;
+        }
+        .text {
+          font-size: 10px;
+        }
       }
     }
   }
