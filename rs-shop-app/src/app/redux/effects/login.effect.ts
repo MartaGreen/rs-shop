@@ -6,7 +6,7 @@ import { LoginService } from 'src/app/auth/services/user.service';
 import {
   getUsersAction,
   getUsersFailAction,
-  getUsersSuccessAction,
+  getUsersSuccessAction
 } from '../actions/user.action';
 
 @Injectable()
@@ -33,7 +33,14 @@ export class LoginEffect {
             }),
             catchError((err) => {
               console.log('wrong password or login', err);
-              document.querySelector('.body');
+              const menu: HTMLUListElement | null = <HTMLUListElement>(
+                document.querySelector('.account')?.querySelector('.dropdown-menu')
+              );
+              menu?.classList.add('show');
+              document.querySelector('.wrong-data')?.classList.add('warning');
+              menu
+                .querySelectorAll('.form-input')
+                .forEach((inp) => inp.classList.add('warning'));
               return of(getUsersFailAction(err));
             }),
           );

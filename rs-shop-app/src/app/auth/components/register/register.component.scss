@@ -41,11 +41,22 @@
         text-align: center;
       }
 
+      .same-pass {
+        color: red;
+        text-align: center;
+        text-decoration: underline;
+        display: none;
+
+        &.warning {
+          display: block;
+        }
+      }
+
       .form-input {
         margin-bottom: 20px;
 
         & .warning {
-          border: 3px solid red;
+          border-bottom: 3px solid rgba(255, 0, 0, 0.83);
         }
       }
 

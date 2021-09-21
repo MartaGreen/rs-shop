@@ -5,6 +5,15 @@
 
   margin: 10px auto;
 
+  .wrong-data {
+    color: red;
+    text-align: center;
+    display: none;
+    &.warning {
+      display: block;
+    }
+  }
+
   .title {
     width: 100%;
     text-align: center;
@@ -13,12 +22,21 @@
 
   .form-input {
     margin-bottom: 20px;
+
+    &.warning input {
+      border-bottom: 3px solid red;
+    }
   }
 
-  .login-btn {
-    margin: 0 auto;
-    background: linear-gradient(to right, #ff3c00, #ffa600);
-    border: 1px solid #ffa600;
+  .btn-cont {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .btn {
+      background: linear-gradient(to right, #ff3c00, #ffa600);
+      border: 1px solid #ffa600;
+    }
   }
 
   .register-btn {

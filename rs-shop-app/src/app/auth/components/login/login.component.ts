@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { getUsersAction } from 'src/app/redux/actions/user.action';
 import { IUserInitialState } from 'src/app/redux/models/user.model';
 import { loginSelector } from 'src/app/redux/selectors/user.selector';
+import { resetLoginForm } from 'src/app/shared/functions/loggedIn';
 import { LoginService } from '../../services/user.service';
 
 @Component({
@@ -38,6 +39,7 @@ export class LoginComponent implements OnInit {
     const registerWindow: HTMLDivElement | null =
       document.querySelector('.register-window');
     registerWindow?.classList.add('opened');
+    resetLoginForm();
   }
 
   logoutFunc() {
@@ -45,14 +47,21 @@ export class LoginComponent implements OnInit {
     setTimeout(() => window.location.reload(), 0);
   }
 
-  loginFunc(login: HTMLInputElement, password: HTMLInputElement) {
-    if (!login.value) console.log('not login');
-    else if (!password.value) console.log('not password');
+  loginFunc(login: HTMLDivElement, password: HTMLDivElement) {
+    if (!login.querySelector('input')?.value) login.classList.add('warning');
+    else if (!password.querySelector('input')?.value) password.classList.add('warning');
     else {
       this.store.dispatch(
-        getUsersAction({ login: login.value, password: password.value }),
+        getUsersAction({
+          login: login.querySelector('input')?.value!,
+          password: password.querySelector('input')?.value!,
+        }),
       );
       // setTimeout(() => window.location.reload(), 0);
     }
+  }
+
+  resetFunc() {
+    resetLoginForm();
   }
 }

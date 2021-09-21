@@ -58,6 +58,7 @@ export class RegisterComponent implements OnInit {
     confirmation.classList.remove('warning');
     password.classList.remove('warning');
     username.classList.remove('warning');
+    document.querySelector('.same-pass')?.classList.remove('warning');
 
     if (!firstName.value) firstName.classList.add('warning');
     if (!lastName.value) lastName.classList.add('warning');
@@ -67,6 +68,7 @@ export class RegisterComponent implements OnInit {
     if (confirmation.value !== password.value) {
       confirmation.classList.add('warning');
       password.classList.add('warning');
+      document.querySelector('.same-pass')?.classList.add('warning');
     }
 
     if (!document.querySelector('.warning')) {
