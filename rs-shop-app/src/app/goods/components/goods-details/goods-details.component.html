@@ -6,7 +6,7 @@
 
     <div class="images-cont">
       <div class="image" *ngFor="let image of details.detailsData.imageUrls; let i = index"
-        (click)='sliderMiniClick($event, i)' [ngClass]="{'activeMini': i == 0}">
+        (click)='sliderMiniClick($event, i)' [ngClass]="{'activeMini': i === 0}">
         <img src="{{details.detailsData.imageUrls[i]}}" alt="">
       </div>
     </div>
@@ -45,7 +45,7 @@
 
       <div class="carousel-inner">
         <div class="carousel-item" *ngFor="let image of details.detailsData.imageUrls; let i = index"
-          [ngClass]="{'active': i == 0}" data-index="i">
+          [ngClass]="{'active': i === 0}" data-index="i">
           <img class="d-block" src="{{details.detailsData.imageUrls[i]}}" alt="First slide">
         </div>
       </div>

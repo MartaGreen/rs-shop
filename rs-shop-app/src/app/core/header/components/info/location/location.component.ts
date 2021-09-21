@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { LocationService } from '../../../services/location.service';
 
 @Component({
@@ -7,10 +7,8 @@ import { LocationService } from '../../../services/location.service';
   styleUrls: ['./location.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LocationComponent implements OnInit {
+export class LocationComponent {
   locationPoint = this.locationService.getLocationFunc();
 
   constructor(private locationService: LocationService) {}
-
-  ngOnInit(): void {}
 }

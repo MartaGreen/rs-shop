@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-footer-template',
   templateUrl: './footer-template.component.html',
-  styleUrls: ['./footer-template.component.scss']
+  styleUrls: ['./footer-template.component.scss'],
 })
-export class FooterTemplateComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class FooterTemplateComponent {
+  constructor() {}
 }
