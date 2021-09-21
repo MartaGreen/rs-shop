@@ -1,8 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { LoginService } from 'src/app/auth/services/user.service';
 import { detailsAction } from 'src/app/redux/actions/details.action';
+import { addToCartAction } from 'src/app/redux/actions/user.action';
 import { detailsSelector } from 'src/app/redux/selectors/details.selector';
+import { warningToLoginOrRegister } from 'src/app/shared/functions/loggedIn';
 
 @Component({
   selector: 'app-goods-details',
@@ -14,7 +17,11 @@ export class GoodsDetailsComponent implements OnInit {
   details: any;
   details$ = this.store.select(detailsSelector);
   params: any;
-  constructor(private store: Store, private router: ActivatedRoute) {}
+  constructor(
+    private store: Store,
+    private router: ActivatedRoute,
+    private service: LoginService,
+  ) {}
 
   ngOnInit(): void {
     this.router.params.subscribe((data) => (this.params = data));
@@ -31,13 +38,36 @@ export class GoodsDetailsComponent implements OnInit {
       .querySelector('#detailsSlider')
       ?.querySelectorAll('.carousel-item')[index];
     sliderItem?.classList.add('active');
+  }
 
-    // const activeMini: HTMLDivElement | null = document.querySelector('.activeMini');
-    // activeMini?.classList.remove('activeMini');
+  addToFavoriteFunc(event: Event, isFavorite: boolean) {
+    if (isFavorite) {
+      const elem: HTMLDivElement | null = (<HTMLElement>event.target).closest(
+        '.favorite',
+      );
+      if (elem) {
+        elem.classList.add('addedToFavorite');
+      }
+    }
+  }
 
-    // const clickedMini: HTMLDivElement | null = (<HTMLElement>event.target).closest(
-    //   '.image',
-    // );
-    // clickedMini?.classList.add('activeMini');
+  findInCartList(itemId: string) {
+    if (this.service.getUsername()) {
+      const items = this.service.getUsername().cart;
+      const flag = items.find((item: string) => item === itemId);
+      return flag ? true : false;
+    } else {
+      return false;
+    }
+  }
+
+  addToCartFunc(id: string, btn: HTMLButtonElement) {
+    if (this.service.getUsername()) {
+      this.store.dispatch(addToCartAction({ id: id }));
+      this.service.addUserCartItem(id);
+      btn.classList.add('addedToCart');
+    } else {
+      warningToLoginOrRegister();
+    }
   }
 }
