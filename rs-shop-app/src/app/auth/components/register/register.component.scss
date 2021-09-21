@@ -2,10 +2,12 @@
   z-index: 3000;
   position: fixed;
   top: 200px;
-  left: 20%;
+  left: 25%;
 
   width: 60%;
   height: auto;
+  max-width: 900px;
+  min-width: 400px;
 
   background-color: #ff9900da;
   display: none;
@@ -22,6 +24,16 @@
       height: 27px;
 
       transition: 0.5s;
+
+      border: 1px solid black;
+      border-radius: 50%;
+
+      svg {
+        fill: black;
+        .cls-1 {
+          fill: black !important;
+        }
+      }
 
       &:hover {
         cursor: pointer;
@@ -113,4 +125,10 @@
 .example-2 .input-file + .js-labelFile.has-file .icon:before {
   content: "\f00c";
   color: #5aac7b;
+}
+
+@media screen and (max-width: 800px) {
+  .register-window {
+    left: 10%;
+  }
 }
