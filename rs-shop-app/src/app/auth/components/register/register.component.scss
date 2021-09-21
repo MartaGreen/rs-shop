@@ -1,0 +1,134 @@
+.register-window {
+  z-index: 3000;
+  position: fixed;
+  top: 100px;
+  left: 25%;
+
+  width: 60%;
+  height: auto;
+  max-width: 900px;
+  min-width: 400px;
+
+  background-color: #ff9900da;
+  display: none;
+
+  &.opened {
+    display: block;
+
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+
+      width: 27px;
+      height: 27px;
+
+      transition: 0.5s;
+
+      border: 1px solid black;
+      border-radius: 50%;
+
+      svg {
+        fill: black;
+        .cls-1 {
+          fill: black !important;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+        transform: rotate(180deg);
+      }
+    }
+
+    .form-cont {
+      margin: 50px auto;
+      width: 80%;
+      background: white;
+      opacity: none;
+      padding: 20px;
+
+      .title {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .same-pass {
+        color: red;
+        text-align: center;
+        text-decoration: underline;
+        display: none;
+
+        &.warning {
+          display: block;
+        }
+      }
+
+      .form-input {
+        margin-bottom: 20px;
+
+        & .warning {
+          border-bottom: 3px solid rgba(255, 0, 0, 0.83);
+        }
+      }
+
+      .name {
+        display: flex;
+        justify-content: space-between;
+
+        .form-input {
+          width: 47%;
+        }
+      }
+
+      .btn {
+        background: linear-gradient(to right, #ff3c00, #ffa600);
+        border: 1px solid #ffa600;
+
+        margin-right: 15px;
+
+        &:hover {
+          color: yellow;
+        }
+      }
+    }
+  }
+}
+
+.example-2 .btn-tertiary {
+  color: white;
+  padding: 0;
+  line-height: 40px;
+  width: 300px;
+  margin: auto;
+  display: block;
+  border: 2px solid #555;
+}
+.example-2 .input-file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.example-2 .input-file + .js-labelFile {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.example-2 .input-file + .js-labelFile .icon:before {
+  content: "\f093";
+}
+.example-2 .input-file + .js-labelFile.has-file .icon:before {
+  content: "\f00c";
+  color: #5aac7b;
+}
+
+@media screen and (max-width: 800px) {
+  .register-window {
+    left: 10%;
+  }
+}

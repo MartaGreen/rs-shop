@@ -1,0 +1,33 @@
+<div class="catalog">
+  <div class="catalog-category">
+    <div class="catalog-category-item" (mouseenter)="onCategoryItemFocus($event)" *ngFor="let item of searchedData">
+      {{(item.name)}}</div>
+  </div>
+
+  <div class="catalog-subcategory">
+    <div *ngIf="chosenCategoryData.name;then thenBlock else elseBlock"></div>
+    <div class="catalog-subcategory">
+      <ng-template #thenBlock>
+        <div class="catalog-subcategory">
+          <h2 class="catalog-category-title">{{chosenCategoryData.name}}</h2>
+          <div class="catalog-subcategories-cont">
+            <div class="catalog-subcategory-item" *ngFor="let subCategory of chosenCategoryData.subCategories"
+              [routerLink]="['/goods/category/', chosenCategoryData.id ,subCategory.id]">
+              {{subCategory.name}}</div>
+          </div>
+        </div>
+      </ng-template>
+
+      <ng-template #elseBlock>
+        <div class="catalog-subcategory" *ngIf="searchedData">
+          <h2 class="catalog-category-title">{{searchedData[0].name}}</h2>
+          <div class="catalog-subcategories-cont">
+            <div class="catalog-subcategory-item" *ngFor="let subCategory of searchedData[0].subCategories"
+              [routerLink]="['/goods/category/', searchedData[0].id ,subCategory.id]">
+              {{subCategory.name}}</div>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

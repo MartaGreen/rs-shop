@@ -1,0 +1,12 @@
+<form class="form-inline d-flex justify-content-center md-form form-sm mt-0 search-field">
+  <input class="form-control form-control-sm ml-3 search-input search-field-input" type="text" placeholder="Search"
+    aria-label="Search" (blur)="onBlurEvent($event)" (focus)="onFocusEvent()">
+</form>
+
+<div class="searched-results" *ngIf="searchedData.categories && showSearchedResults">
+  <div *ngFor="let category of searchedData.categories">
+    <div class="searched-results-item" *ngFor="let subCategory of category.subCategories"
+      [routerLink]="['/goods/category/', category.id ,subCategory.id]">{{subCategory.name }}
+    </div>
+  </div>
+</div>

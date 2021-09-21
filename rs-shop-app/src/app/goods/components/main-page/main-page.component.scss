@@ -1,0 +1,144 @@
+.main {
+  position: relative;
+  width: 80%;
+  max-width: 1200px;
+  min-width: 500px;
+  margin: 0 auto;
+  padding: 40px 0;
+
+  .carousel-cont {
+    width: 50%;
+    height: 520px;
+
+    margin-right: 5%;
+
+    .title {
+      width: 100%;
+      text-align: center;
+      background: orange;
+      color: white;
+      font-size: 45px;
+      margin: 10px 0;
+      border-radius: 7px 0;
+    }
+
+    .sales-carousel {
+      position: relative;
+
+      cursor: pointer;
+
+      position: relative;
+      width: 100%;
+      height: 480px;
+      padding: 25px;
+      vertical-align: middle;
+
+      box-shadow: 0 0 5px rgb(211, 209, 209);
+
+      .sales {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+
+        .st0 {
+          fill-rule: evenodd;
+          clip-rule: evenodd;
+          fill: #fdb913;
+        }
+
+        .st1 {
+          fill: none;
+        }
+      }
+
+      .carousel-inner {
+        width: 100%;
+        margin: 0 auto;
+
+        img {
+          margin: 0 auto;
+          width: auto;
+          max-width: 90%;
+          max-height: 390px;
+        }
+      }
+
+      .sr-only {
+        color: black;
+      }
+
+      .carousel-control {
+        width: 10%;
+        margin: 0 5px;
+
+        text-align: center;
+      }
+    }
+  }
+
+  .advantages {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+
+    width: 100%;
+    margin: 60px auto;
+
+    border-top: 2px solid orange;
+
+    .advantage {
+      display: flex;
+      margin: 10px 0;
+      padding: 10px;
+
+      .image {
+        max-width: 20%;
+        margin-right: 7px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .description {
+        .title {
+          font-size: 14px;
+        }
+        .text {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .carousel-cont {
+    width: 60% !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  .carousel-cont {
+    width: 80% !important;
+  }
+}
+@media screen and (max-width: 650px) {
+  .carousel-cont {
+    width: 80% !important;
+    height: 400px !important;
+
+    margin: 0 auto !important;
+
+    .sales-carousel {
+      height: 370px !important;
+
+      .carousel-inner {
+        img {
+          max-height: 320px !important;
+        }
+      }
+    }
+  }
+}

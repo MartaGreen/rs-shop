@@ -1,0 +1,64 @@
+<div class="register-window" #window>
+  <div class="close-btn" (click)="closeRegisterWindow(window)">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <style>
+          .cls-1 {
+            fill: black;
+            stroke: #000;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 2px;
+          }
+        </style>
+      </defs>
+      <g id="cross">
+        <line class="cls-1" x1="7" x2="25" y1="7" y2="25" />
+        <line class="cls-1" x1="7" x2="25" y1="25" y2="7" />
+      </g>
+    </svg>
+  </div>
+
+  <div class="form-cont">
+    <h3 class="title">Register</h3>
+    <div class="form-row">
+
+      <div class="name">
+        <div class="form-input">
+          <label for="validationDefault01">First name</label>
+          <input type="text" class="form-control" id="validationDefault01" placeholder="First name" placeholder="Mark"
+            required #firstName>
+        </div>
+        <div class="form-input">
+          <label for="validationDefault02">Last name</label>
+          <input type="text" required class="form-control" id="validationDefault02" placeholder="Last name"
+            placeholder="Otto" required #lastName>
+        </div>
+      </div>
+
+      <div class="form-input">
+        <label for="validationDefaultUsername">Username</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend2">@</span>
+          </div>
+          <input type="text" class="form-control" required id="validationDefaultUsername" placeholder="Username"
+            aria-describedby="inputGroupPrepend2" required #login>
+        </div>
+      </div>
+      <div class="same-pass">Пароли не совпадают</div>
+      <div class="form-group form-input">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" required id="exampleInputPassword1" placeholder="Password"
+          #password>
+      </div>
+      <div class="form-group form-input">
+        <label for="exampleInputPassword1">Confirmation</label>
+        <input type="password" class="form-control" required id="exampleInputPassword1" placeholder="Confirmation"
+          #confirmation>
+      </div>
+    </div>
+    <button class="btn btn-primary btn login-btn" type="submit"
+      (click)="createUserFunc(firstName, lastName, login, password, confirmation)">Register</button>
+  </div>
+</div>

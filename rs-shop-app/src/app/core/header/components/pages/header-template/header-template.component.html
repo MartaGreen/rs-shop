@@ -1,0 +1,35 @@
+<header class="header">
+  <div class="shadow-box">
+    <div class="header-info header-inner">
+      <app-location></app-location>
+
+      <div class="save-place"></div>
+      <div class="payment">
+        <span class="payment-item hide-payment2">Оплата частями</span>
+        <span class="payment-item hide-payment">Бонусная программа</span>
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Еще
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item show-payment2" href="#">Оплата частями</a></li>
+            <li><a class="dropdown-item show-payment" href="#">Бонусная программа</a></li>
+            <li><a class="dropdown-item" href="#">Оплата</a></li>
+            <li><a class="dropdown-item" href="#">Доставка</a></li>
+            <li><a class="dropdown-item" href="#">Самовывоз</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <app-contacts class="header-item"></app-contacts>
+      <app-time class="header-item"></app-time>
+    </div>
+  </div>
+  <div class="header-nav header-inner">
+    <app-nav></app-nav>
+  </div>
+</header>
+
+<app-categories-nav></app-categories-nav>

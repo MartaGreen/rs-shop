@@ -1,0 +1,37 @@
+.search-field {
+  height: 40px;
+
+  .search-field-input {
+    width: 100%;
+    border-radius: 30px !important;
+  }
+}
+
+.searched-results {
+  position: absolute;
+  top: 90px;
+  left: 10%;
+
+  width: 80%;
+  // margin: 15px auto;
+
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  box-shadow: 1px 2px 3px rgb(207, 206, 206);
+
+  font-size: 16px;
+
+  background: white;
+
+  .searched-results-item {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    height: 40px;
+    transition: 0.5s;
+
+    &:hover {
+      background: linear-gradient(to bottom, rgb(247, 164, 40), rgb(251, 253, 108));
+      cursor: pointer;
+    }
+  }
+}

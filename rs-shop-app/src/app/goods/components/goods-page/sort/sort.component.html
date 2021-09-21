@@ -1,0 +1,59 @@
+<div class="sort-cont" ng-init='load()'>
+  <span class="sort-title">Сортировать по:</span>
+  <div class="sort-by-price sort-by" (click)="sortFunc('price')">
+    <span class="sort-by-title"> цене </span>
+    <div class="sort-by-icon" [ngClass]="{'reverseIcon': !priceSortFlag}">
+      <svg id="arrow-bottom" xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" viewBox="0 0 48 48">
+        <defs>
+          <style>
+            .vi-primary {
+              fill: #ffb400;
+            }
+
+            .vi-primary,
+            .vi-accent {
+              stroke: #fff;
+              stroke-linecap: round;
+              stroke-width: 0;
+              fill-rule: evenodd;
+            }
+
+            .vi-accent {
+              fill: #070c2b;
+            }
+          </style>
+        </defs>
+        <path class="vi-primary" d="M26,10V30l5-5,3,3L24,38,14,28l3-3,5,5V10h4Z" />
+        <path class="vi-accent" d="M22,18h4V10H22v8Z" />
+      </svg>
+    </div>
+  </div>
+  <div class="sort-by-rating sort-by" (click)="sortFunc('rating')">
+    <span class="sort-by-title"> популярности </span>
+    <div class="sort-by-icon" [ngClass]="{'reverseIcon': ratingSortFlag}">
+      <svg id="arrow-bottom" xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" viewBox="0 0 48 48">
+        <defs>
+          <style>
+            .vi-primary {
+              fill: #ffb400;
+            }
+
+            .vi-primary,
+            .vi-accent {
+              stroke: #fff;
+              stroke-linecap: round;
+              stroke-width: 0;
+              fill-rule: evenodd;
+            }
+
+            .vi-accent {
+              fill: #070c2b;
+            }
+          </style>
+        </defs>
+        <path class="vi-primary" d="M26,10V30l5-5,3,3L24,38,14,28l3-3,5,5V10h4Z" />
+        <path class="vi-accent" d="M22,18h4V10H22v8Z" />
+      </svg>
+    </div>
+  </div>
+</div>
