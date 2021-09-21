@@ -5,12 +5,20 @@
 
   display: flex;
 
+  svg {
+    fill: black;
+
+    .st0 {
+      fill: none;
+    }
+  }
+
   &:hover {
     cursor: pointer;
-    color: rgb(255, 115, 0);
+    color: rgb(255, 38, 0);
 
-    .location-svg {
-      fill: rgb(255, 115, 0);
+    svg {
+      fill: rgb(255, 38, 0);
     }
   }
 }

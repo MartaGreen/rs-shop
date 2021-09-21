@@ -2,10 +2,11 @@
   position: relative;
   width: 80%;
   max-width: 1200px;
+  min-width: 500px;
   margin: 0 auto;
   padding: 40px 0;
 
-  .carouser-cont {
+  .carousel-cont {
     width: 50%;
     height: 520px;
 
@@ -107,6 +108,35 @@
         }
         .text {
           font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .carousel-cont {
+    width: 60% !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  .carousel-cont {
+    width: 80% !important;
+  }
+}
+@media screen and (max-width: 650px) {
+  .carousel-cont {
+    width: 80% !important;
+    height: 400px !important;
+
+    margin: 0 auto !important;
+
+    .sales-carousel {
+      height: 370px !important;
+
+      .carousel-inner {
+        img {
+          max-height: 320px !important;
         }
       }
     }

@@ -49,7 +49,7 @@
       }
 
       &.amount {
-        padding-top: 75%;
+        padding-top: 100px;
         display: flex;
         vertical-align: middle;
 
@@ -64,9 +64,31 @@
         }
       }
 
+      .delivery {
+        padding-top: 100px;
+      }
+
       &.price {
+        padding-top: 100px;
+        vertical-align: top;
         text-align: center;
       }
     }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .description,
+  .th-description,
+  .th-delivery,
+  .delivery {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 1010px) {
+  .description,
+  .th-description {
+    display: none !important;
   }
 }

@@ -14,6 +14,8 @@
 
     color: white;
     .category {
+      min-width: 120px;
+      text-align: center;
       &:hover {
         cursor: pointer;
         color: rgb(252, 248, 5);
@@ -21,6 +23,7 @@
 
       &.sale-category {
         font-weight: bold;
+        min-width: 180px;
         &::after {
           content: "";
           border-right: 2px solid gray;
