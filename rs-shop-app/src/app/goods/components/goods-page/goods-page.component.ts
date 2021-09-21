@@ -7,6 +7,7 @@ import { addToCartAction } from 'src/app/redux/actions/user.action';
 import { goodsSelector } from 'src/app/redux/selectors/goods-page.selector';
 import { getCartItemSelector } from 'src/app/redux/selectors/user.selector';
 import { getColor } from 'src/app/shared/functions/colors';
+import { warningToLoginOrRegister } from 'src/app/shared/functions/loggedIn';
 
 @Component({
   selector: 'app-goods-page',
@@ -52,14 +53,22 @@ export class GoodsPageComponent implements OnInit {
   }
 
   findInCartList(itemId: string) {
-    const items = this.service.getUsername().cart;
-    const flag = items.find((item: string) => item === itemId);
-    return flag ? true : false;
+    if (this.service.getUsername()) {
+      const items = this.service.getUsername().cart;
+      const flag = items.find((item: string) => item === itemId);
+      return flag ? true : false;
+    } else {
+      return false;
+    }
   }
 
   addToCartFunc(id: string, btn: HTMLButtonElement) {
-    this.store.dispatch(addToCartAction({ id: id }));
-    this.service.addUserCartItem(id);
-    btn.classList.add('addedToCart');
+    if (this.service.getUsername()) {
+      this.store.dispatch(addToCartAction({ id: id }));
+      this.service.addUserCartItem(id);
+      btn.classList.add('addedToCart');
+    } else {
+      warningToLoginOrRegister();
+    }
   }
 }

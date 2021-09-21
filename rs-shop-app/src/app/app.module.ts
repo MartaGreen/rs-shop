@@ -19,6 +19,7 @@ import { LoginEffect } from './redux/effects/login.effect';
 import { RegisterEffect } from './redux/effects/register.effect';
 import { getSaleGoodsEffect } from './redux/effects/sales.effect';
 import { reducers } from './redux/reducers/register-reducers';
+import { SharedModule } from './shared/shared.module';
 import { UsersGoodsModule } from './users-goods/users-goods.module';
 
 @NgModule({
@@ -44,6 +45,7 @@ import { UsersGoodsModule } from './users-goods/users-goods.module';
     GoodsModule,
     AuthModule,
     UsersGoodsModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
